@@ -1,4 +1,4 @@
-Pushover4j
+Pushover-Android-Java
 --------
 
 [![Build Status](https://travis-ci.org/sps/pushover4j.png?branch=master)](https://travis-ci.org/sps/pushover4j)
@@ -36,27 +36,10 @@ for (PushOverSound sound : client.getSounds() ) {
     System.out.println(String.format("name: %s, id: %s", sound.getName(), sound.getId()));
 }              
 ```
-Check the Wiki for more examples and features. If something is missing please raise a request. 
-### Installing 
-Installation is best done through the Maven build system. We should keep the maven system up to date with releases but you are free to manually install things. Java 6 or higher required. 
-##### For maven
+
 Just search the maven repo for ` pushover-client ` or add the following to your POM
 ```
 <dependency>
-  <groupId>com.github.sps.pushover.net</groupId>
-  <artifactId>pushover-client</artifactId>
-  <version>1.5.1</version>
+  implementation 'com.github.sps.pushover.net:pushover-client:1.5.1'
 </dependency>
 ```
-
-##### Other build systems
-for the non-maven types, here are the required dependencies
-* [pushover4j](http://github.com/sps/pushover4j/downloads)
-* [gson 2.3.1](https://github.com/google/gson)
-* [apache commons httpclient 4.4.1](http://hc.apache.org/downloads.cgi)
- 
-##### Note: Java 6 users
-For java 6 users you will need to enhance your security provider. Pushover uses a Diffie-Hillman 1024 for handshake on its new key which Java 6 does not support natively. If your country allows it you may install the Boucny Castle provider to continue using the service. Otherwise newer versions of Java 7 and Java 8 will work natively.
-
-### Whats new for v1.5?
-Version 1.5 addes a number of new features that help cover more of the available pushover API calls. Responses, user validation, emergency priorities. Check out the wiki for additional information. v1.0 is still valid for basic uses but version 1.5 expands on the functionality and is recommended.
